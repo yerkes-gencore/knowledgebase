@@ -45,3 +45,6 @@ for essential libraries (e.g. DESeq2, Seurat).
 libraries used for a project and enable a cache of different versions for 
 different projects.
 
+[Format files](Project_management_and_reproducibility/Format_files.md): Workflow
+for rendering HTML reports.
+
