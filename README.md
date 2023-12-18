@@ -48,3 +48,10 @@ different projects.
 [Format files](Project_management_and_reproducibility/Format_files.md): Workflow
 for rendering HTML reports.
 
+## Study designs
+
+[Cancer exome](study_designs/Cancer_exome.md): Detecting mutations driving cancer
+
+[Cancer fusions](study_designs/Cancer_fusions.md): Detecting RNA fusions in
+tumor samples.
+
