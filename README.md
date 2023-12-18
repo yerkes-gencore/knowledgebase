@@ -31,6 +31,7 @@ from wasting time.
 
 ## R/RStudio/RStudio Server
 
+[Dockerized Rstudio](R_RStudio/Dockerized_Rstudio.md)
 
 ## Nextflow
 
