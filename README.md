@@ -31,10 +31,9 @@ from wasting time.
 
 ## R/RStudio/RStudio Server
 
-[Dockerized Rstudio](Project_management_and_reproducibility/Dockerized_rstudio.md)
-
 ## Nextflow
 
+[Running nextflow](Nextflow/Running_nextflow.md)
 
 ## Project management and reproducibility
 
@@ -55,4 +54,6 @@ for rendering HTML reports.
 
 [Cancer fusions](study_designs/Cancer_fusions.md): Detecting RNA fusions in
 tumor samples.
+
+[TCR Analysis](study_designs/TCR_Analysis.md)
 
