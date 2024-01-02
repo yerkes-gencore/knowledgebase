@@ -28,6 +28,8 @@ from wasting time.
 
 [Demultiplexing](Single_cell/Demultiplexing.md)
 
+[Pseudobulk](Single_cell/pseudobulk.md)
+
 
 ## R/RStudio/RStudio Server
 
