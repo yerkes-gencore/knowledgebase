@@ -5,7 +5,7 @@ library(DiagrammeR)
 
 # here::i_am('Immunology/celltype-heirarchy.R')
 
-data <- yaml::read_yaml('celltype-heirarchy.yaml')
+data <- yaml::read_yaml('Immunology/celltype-heirarchy.yaml')
 
 osNode <- data.tree::as.Node(data, interpretNullAsList = TRUE)
 
