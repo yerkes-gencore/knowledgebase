@@ -1,0 +1,51 @@
+---
+## For more specific celltypes, consider adding data for organism (human and/or rhesus) and sources.
+## Try to have the parent name be the consistent name used internally with all databases and analyses
+## E.g. marker genes should be for naive b cells rather than follicular B cells. If you update the
+## primary name here, try to update it across other reference documents and databases too. 
+## Aliases are there for reference when external colaborators use different nomenclature
+name: Immune cells
+Lymphocytes:
+  T cells:
+    CD4+ T:
+        T-regulatory:
+          aliases: Treg
+        TH1:
+        TH2:
+        T follicular helper:
+          aliases: Tfh
+    CD8+ T:
+
+  B cells:
+    Memory B:
+    Germinal center B:
+    Naive B:
+      aliases: [Follicular B cells, FoB, B-2]
+  
+  Innate lymphoid cells:
+    aliases: ILCs
+    Natural killers:
+      aliases: NK
+    NK CD56-bright:
+    NK CD56-dim:
+
+Monocytes:
+  Classical monocytes:
+    aliases: CD14+ CD16-
+  Intermediate monocytes:
+    aliases: CD14+ CD16+
+  Non-classical monocytes:
+    aliases: CD14dim CD16+
+  Dendritic cells:
+    DC1:
+    DC2:
+    plasmacytoid DC:
+      aliases: pDC
+
+Granulocytes:
+  Mast:
+  Basophils:
+  Eosinophils:
+  Neutrophils:
+
+...
