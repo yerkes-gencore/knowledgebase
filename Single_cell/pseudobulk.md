@@ -2,7 +2,13 @@
 
 Besides the fact that `Seurat::FindMarkers` can't handle any contrast more complex than a simple pairwise comparison of two cell populations, such methods also have inflated FDR biased towards highly expressed genes and have poorer type 2 (false negative) control than pseudobulk.
 
-Here are the details:
+[Orchestrating Single Cell Analysis](https://bioconductor.org/books/3.16/OSCA.multisample/multi-sample-comparisons.html#creating-pseudo-bulk-samples) summarizes the rationale behind "pseudo-bulking":
+
+>- Larger counts are more amenable to standard DE analysis pipelines designed for bulk RNA-seq data. Normalization is more straightforward and certain statistical approximations are more accurate e.g., the saddlepoint approximation for quasi-likelihood methods or normality for linear models.
+>- Collapsing cells into samples reflects the fact that our biological replication occurs at the sample level (Lun and Marioni 2017). Each sample is represented no more than once for each condition, avoiding problems from unmodelled correlations between samples. Supplying the per-cell counts directly to a DE analysis pipeline would imply that each cell is an independent biological replicate, which is not true from an experimental perspective. (A mixed effects model can handle this variance structure but involves extra statistical and computational complexity for little benefit, see Crowell et al. (2019).)
+>- Variance between cells within each sample is masked, provided it does not affect variance across (replicate) samples. This avoids penalizing DEGs that are not uniformly up- or down-regulated for all cells in all samples of one condition. Masking is generally desirable as DEGs - unlike marker genes - do not need to have low within-sample variance to be interesting, e.g., if the treatment effect is consistent across replicate populations but heterogeneous on a per-cell basis. Of course, high per-cell variability will still result in weaker DE if it affects the variability across populations, while homogeneous per-cell responses will result in stronger DE due to a larger population-level log-fold change. These effects are also largely desirable.
+
+See details on the performance advantages of pseudobulk over single-cell based DE methods below:
 
 ## Single-cell differential expression methods are prone to false discoveries
 
