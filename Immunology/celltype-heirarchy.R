@@ -1,6 +1,7 @@
 library(yaml)
 library(data.tree)
 library(DiagrammeR)
+library(DiagrammeRsvg)
 library(here)
 library(rsvg)
 
