@@ -79,7 +79,11 @@ If the list is short enough or if there are mission-critical genes that are left
 
 For example, in the above workflow, CXCL1 didn't have a Mus ortholog. Searching for it at https://www.alliancegenome.org reveals that there are three Mus musculus gene symbols with mixed evidence of orthology using various computational methods, and that the Ensemble and HGNC databases don't list them as orthologs.
 
-Each database predicts orthologs in different ways for different reasons and there seems to be so such thing as a universally accepted "right" answer for how to do this, so ultimately someone has to make a judgement. I like this interface a lot because it shows you which methods agree and disagree on the call rather than just taking one. I wish there was a way to query this database from R...
+Each database predicts orthologs in different ways for different reasons and there seems to be so such thing as a universally accepted "right" answer for how to do this, so ultimately someone has to make a judgement. 
+
+![alliancegenome.org](https://github.com/yerkes-gencore/knowledgebase/blob/main/Biology/genomealliance_screenshot.png)
+
+I like this interface a lot because it shows you which methods agree and disagree on the call rather than just taking one. I wish there was a way to query this database from R...
 
 ## Other (less flexible and more clunky) ways of finding orthologs
 
