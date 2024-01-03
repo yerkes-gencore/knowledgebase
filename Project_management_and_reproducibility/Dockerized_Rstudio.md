@@ -99,7 +99,7 @@ You will also likely want to have an `.Renviron` file that is mounted with your 
 
 You may want to setup a `rsession.conf` file to increase the timeout length for your session. A plaintext file with the expression `session-timeout-minutes=7200` can be mounted to `/etc/rstudio/rsession.conf` to set your timeout length. 
 
-## Git tab isn't showing up in RStudio interface
+# Git tab isn't showing up in RStudio interface
 
 If you try running `git status` in RStudio's terminal you will likely get an error looking something like this:
 ```
@@ -111,7 +111,7 @@ To add an exception for this directory, call:
 
 If so, just run that last line in the terminal, then `Quit Session` and it should be visible again.
 
-## Resources for resolving system dependencies of R packages
+# Resources for resolving system dependencies of R packages
 
 The `pak` library can help identify all dependencies needed for a package. E.g.:
 
