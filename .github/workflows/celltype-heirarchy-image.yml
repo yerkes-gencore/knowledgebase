@@ -30,7 +30,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        Rscript -e 'install.packages(c("yaml", "data.tree", "DiagrammeR", "here", "rsvg"), repos="https://cloud.r-project.org")'
+        Rscript -e 'install.packages(c("yaml", "data.tree", "DiagrammeR", "here", "rsvg", "DiagrammeRsvg"), repos="https://cloud.r-project.org")'
 
     - name: Run R script
       run: Rscript Immunology/celltype-heirarchy.R  # Update the path to your R script
