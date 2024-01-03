@@ -39,7 +39,7 @@ from wasting time.
 
 ## Project management and reproducibility
 
-[Dockerized Rstudio](Project_management_and_reproducibility/Dockerized_rstudio.md): 
+[Dockerized Rstudio](Project_management_and_reproducibility/Dockerized_Rstudio.md): 
 Isolated containers with consistent architecture, R versions, and machine dependencies 
 for essential libraries (e.g. DESeq2, Seurat).
 
