@@ -51,6 +51,75 @@ Then your analysis is
 
 If you have fewer than 2 replicate per group, pseudobulk statistics is technically impossible and any inference you draw will be preliminary at best. Two replicates is technically possible with `limma`/`edgeR` but practically still only preliminary. Would you really trust a PCA with only two samples in a group? Just two tossed of a loaded die?
 
-Three is the absolute bare minimum but more replicates and fewer groups is advised if you want any hope of your DE analysis to be reproducible. 
+Three is the absolute bare minimum but more replicates and fewer groups is advised if you want any hope of your DE analysis to be reproducible.
+
+***
+
+# How to run a pseudobulk analysis with limma/edgeR
+
+Here are a collection of ideas and links that I've come across while developing the pseudobulk analysis for the p21242_Satish project. See [07-T+ILC-pseudobulk_P11CvsOVA-runfile.Rmd](https://github.com/yerkes-gencore/p21242_Satish_UM5_Analysis/blob/4b54113429b3cefb2e9703c5bf4196725ffd5436/analysis_scripts/07-T%2BILC-pseudobulk_P11CvsOVA-runfile.Rmd#L967) for a full working example of the pipeline I arrived at.
+
+## Pre-pseudobulking quality control
+
+Before pseudobulk DE, you need a dataset with multiple biological replicates per factor level of interest and with cells labeled as confidently as you can with the cell types of interest.
+
+*[to be continued...]*
+
+### Examine cell counts by sample, cull abberant samples
+
+
+### Define clusters of interest
+
+
+### Define contrasts of interest
+
+
+### Check sample sizes by contrast
+
+
+### Decide which samples and clusters to drop
+
+
+## Pseudobulking quality control
+
+### Create pseudobulk object
+
+
+### Filter genes with low expression
+
+
+### Check library sizes of pseudobulk samples
+
+
+### Plot PCA
+
+
+## Pseudobulk DE quality control
+
+### Plot group-wise mean-variance trends using `voomByGroup()` (optional)
+
+
+### Run `edgeR::voomLmFit()`
+
+
+### Check MD plots
+
+
+### Check p-value distributions
+
+
+## Pseudobulk DE results
+
+### Summarize DEG counts
+
+
+### Wrangle, write and present results tables
+
+
+
+
+
+
+
 
 If we had to give a rule of thumb, it would be something like, "Shoot for at least 5-7 biological replicates per group because three-quarters of at least one of your groups will likely fail".
