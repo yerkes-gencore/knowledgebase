@@ -50,7 +50,7 @@ different projects.
 [Format files](Project_management_and_reproducibility/Format_files.md): Workflow
 for rendering HTML reports.
 
-[Git and Github with RStudio (server)](Project_management_and_reproducibility/git_and_github_with_rstudio.md): Getting git credentials setup in RStudio server, troubleshooting common git/Github/RStudio problems, and creating new gencore analysis projects from templates.
+[Git and GitHub with RStudio (server)](Project_management_and_reproducibility/git_and_github_with_rstudio.md): Getting git credentials setup in RStudio server, troubleshooting common git/GitHub/RStudio problems, and creating new gencore analysis projects from templates.
 
 ## Study designs
 
