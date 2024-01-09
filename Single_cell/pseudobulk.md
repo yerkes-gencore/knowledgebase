@@ -1,5 +1,12 @@
 # Why bother with pseudobulk?
 
+## TL;DR
+
+([Squair et al. 2021](https://www.nature.com/articles/s41467-021-25960-2)):
+> Our results demonstrate that single-cell DE methods are poised to produce false discoveries. This understanding uncovers an enormous risk for the field. Our findings suggest that many published findings may be false. Moreover, if left unresolved, substantial research funding may be allocated to follow up on these false discoveries, to the detriment of science. However, this concerning possibility is straightforward to correct with the use of DE methods that account for variability between replicates. Among these, we found that pseudobulk methods achieve the highest fidelity to the experimental ground truth at the levels of the transcriptome, proteome, and functional interpretation. Consequently, we contend that there is an urgent need for a paradigm shift in the statistical methods that are used for DE analysis of single-cell data. The need for such a shift is under- scored by our observation that most studies published in the past two years have used inappropriate statistical methods for DE analysis. Moreover, the most widely used analysis packages in the field currently employ DE methods prone to false discoveries by default35,36. The increasing prevalence of multi-condition datasets stresses the importance of employing appropriate statistical methodologies to prevent a proliferation of false discoveries.
+
+## The rationale behind 'pseudobulking'
+
 Besides the fact that `Seurat::FindMarkers` can't handle any contrast more complex than a simple pairwise comparison of two cell populations, such methods also have inflated FDR biased towards highly expressed genes and have poorer type 2 (false negative) control than pseudobulk.
 
 [Orchestrating Single Cell Analysis](https://bioconductor.org/books/3.16/OSCA.multisample/multi-sample-comparisons.html#creating-pseudo-bulk-samples) summarizes the rationale behind "pseudo-bulking":
