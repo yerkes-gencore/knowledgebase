@@ -44,6 +44,8 @@ This repo should be living documentation that is updated with alternative method
 
 [Tempalte repos](Project_management_and_reproducibility/template_repos.md): Directory structure and scripts generalizable to an analysis. These serve as starting points for new analyses. 
 
+[Gencore packages](Project_management_and_reproducibility/gencore_packages.md): Standardized code for common gencore analyses.
+
 ## Study designs
 
 [Cancer exome](study_designs/Cancer_exome.md): Detecting mutations driving cancer
