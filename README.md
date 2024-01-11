@@ -24,6 +24,8 @@ This repo should be living documentation that is updated with alternative method
 
 [Pseudobulk](Single_cell/pseudobulk.md)
 
+[Composition analysis](Single_cell/Composition_analysis.md)
+
 ## R/RStudio/RStudio Server
 
 ## Nextflow
