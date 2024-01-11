@@ -34,3 +34,18 @@ https://pubmed.ncbi.nlm.nih.gov/34810222/
 
 There seems to be not a clear consensus on how to collapse slight differences
 to call clones. It seems to be on a 'per study' basis. 
+
+What we did for the p23120 study was
+1) Run cellranger with the modified reference from Ben. I filtered out the gamma
+and delta chains from the FASTA, as we were not interested in those.
+2) Run a custom script to call clonotypes on the cellranger outputs. For each cell,
+the alpha and beta chains with the most UMIs were selected as the TRA/TRB chains for 
+that cell. Not every cell had both chains. A clone had to have perfect identity
+in the V-gene, J-gene, and CDR3 AA sequence for the respective chains.
+We explored 3 collapsing algorithms:
+2a) Only call clonotypes for cells with both a TRA and TRB
+2b) Call clonotypes on TRA and TRB, but if a cell has only a TRB chain, see if it
+matches one (and ONLY one) existing clonotype of TRA+TRB. If so, we assume these
+are part of the same clonotype and collapse them.
+2c) Only call clonotypes based on the TRB chain. 
+We went forward with the 2b) approach. 
