@@ -66,3 +66,6 @@ T/B cells across treatments/timepoints.
 
 [Orthologous gene symbols](Biology/orthologous_gene_symbols.md): Finding the corresponding gene symbol across species (e.g. mouse -> human, human -> macaca mulatta)
 
+[Immunology cell types](Biology/celltype-heirarchy.yaml): Nomenclature for immune cells and aliases. See the 
+[image](Biology/celltype-heirarchy.pdf) for an overview.
+
