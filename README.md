@@ -59,7 +59,8 @@ for rendering HTML reports.
 [Cancer fusions](study_designs/Cancer_fusions.md): Detecting RNA fusions in
 tumor samples.
 
-[TCR Analysis](study_designs/TCR_Analysis.md)
+[TCR Analysis](study_designs/TCR_Analysis.md): Identifying clonal expansion of 
+T/B cells across treatments/timepoints.
 
 ## Biology
 
