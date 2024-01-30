@@ -10,4 +10,4 @@ by using the [celltype-heirarchy](celltype-heirarchy.yaml). This should allow fo
 walks you through setting up a query to retrieve data as an R table. This script can be sourced while actively working on an analysis, providing
 your environment with a single object for your query results.
 
-For more information, see the [Gencore database]() repo. 
+For more information, see the [gene expression database](https://github.com/yerkes-gencore/gene_expression_database) repo. 
