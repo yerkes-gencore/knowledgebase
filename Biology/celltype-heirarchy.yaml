@@ -77,16 +77,18 @@ Monocytes:
   Non-classical monocyte:
     aliases: CD14dim CD16+
   Dendritic cell:
-    cDC1:
-      aliases: [DC1, conventional Dendritic Cell 1]
-    cDC2:
-      aliases: [DC2, conventional Dendritic Cell 2]
+    mregDC:
+      aliases: activated denritic cells, migratory denritic cells
+    mDC:
+      aliases: myeloid dendritic cell, classical dendritic cells
+      cDC1:
+        aliases: [DC1, conventional Dendritic Cell 1]
+      cDC2:
+        aliases: [DC2, conventional Dendritic Cell 2]
     pDC:
       aliases: plasmacytoid DC
     ASDC:
       aliases: AXL+ Dendritic cell
-    mDC:
-      aliases: myeloid dendritic cell
 
 
 Granulocyte:
