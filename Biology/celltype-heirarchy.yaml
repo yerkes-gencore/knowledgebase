@@ -3,49 +3,103 @@
 ## Try to have the parent name be the consistent name used internally with all databases and analyses
 ## E.g. marker genes should be for naive b cells rather than follicular B cells. If you update the
 ## primary name here, try to update it across other reference documents and databases too. 
-## Aliases are there for reference when external colaborators use different nomenclature
+## Aliases are there for reference when external colaborators use different nomenclature.
+## Always use singular case (lymphocyte, not lymphocytes)
 name: Immune cells
-Lymphocytes:
-  T cells:
+Lymphocyte:
+  T cell:
     CD4+ T:
-        T-regulatory:
-          aliases: Treg
-        TH1:
-        TH2:
-        T follicular helper:
-          aliases: Tfh
+      CD4 cytotoxic T:
+      CD4 proliferating:
+      Treg:
+        aliases: T-regulatory
+        Naive regulatory T:
+        Memory regulatory T:
+      TH1:
+      TH2:
+      TFH:
+        aliases: T follicular helper
+      CD4+ ISG-rich:
+      CD4 naive :
+      CD4 memory:
+        CD4 effector memory:
+        CD4 central memory:
+        CD4 transitional memory:
     CD8+ T:
+      CD8 naive:
+      CD8 proliferating :
+      CD8 memory:
+        CD8 central memory:
+          aliases: [CM, TCM]
+        CD8 effector memory:
+          aliases: [EM, TEM]
+          TEMRA:
+            aliases: effector memory cells re-expressing CD45RA
+        CD8 transitional memory:
+      CD8+ ISG-rich:
+    MAIT:
+      aliases: Mucosal associated invariant T cell
+    gamma-delta T:  
+    dNT:
+      aliases: Double negative T
+    NKT cell:
+      aliases: Natural killer T cell
+    T mature:
+      aliases: Mature T cell
 
-  B cells:
-    Memory B:
-    Germinal center B:
-    Naive B:
+  B cell:
+    B memory :
+      B non-switched memory :
+      B switched memory:
+      B T-bet+ memory:
+    B germinal center:
+    B naive:
       aliases: [Follicular B cells, FoB, B-2]
+    B transitional:
+    B ISG-rich:
+    B nature:
+
   
   Innate lymphoid cells:
     aliases: ILCs
-    Natural killers:
-      aliases: NK
-    NK CD56-bright:
-    NK CD56-dim:
+    NK cell:
+      aliases: Natural killer cells
+      NK CD56bright:
+      NK CD56dim:
+      NK adaptive:
+      NK proliferating:
 
 Monocytes:
-  Classical monocytes:
+  Classical monocyte:
     aliases: CD14+ CD16-
-  Intermediate monocytes:
+  Intermediate monocyte:
     aliases: CD14+ CD16+
-  Non-classical monocytes:
+  Non-classical monocyte:
     aliases: CD14dim CD16+
-  Dendritic cells:
-    DC1:
-    DC2:
-    plasmacytoid DC:
-      aliases: pDC
+  Dendritic cell:
+    cDC1:
+      aliases: [DC1, conventional Dendritic Cell 1]
+    cDC2:
+      aliases: [DC2, conventional Dendritic Cell 2]
+    pDC:
+      aliases: plasmacytoid DC
+    ASDC:
+      aliases: AXL+ Dendritic cell
+    mDC:
+      aliases: myeloid dendritic cell
 
-Granulocytes:
+
+Granulocyte:
   Mast:
-  Basophils:
-  Eosinophils:
-  Neutrophils:
+  Basophil:
+  Eosinophil:
+  Neutrophil:
 
+HSPC:
+  aliases: Hematopoietic stem and progenitor cell
+Other PBMC:
+  Plasmablast:
+  Platelet:
+  Plasma cell:
+Erythroid:
 ...
