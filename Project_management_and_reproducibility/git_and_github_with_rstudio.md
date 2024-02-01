@@ -118,5 +118,22 @@ For most single cell or bulk analyses, it's best to create a new repo from the `
 
 In general, it's best to clone the repo into a separate location from the `/yerkes-cifs/runs/Analysis` directory where the `data` and `processing` directories are so that if multiple people need to work on the same repo they will clone it into their own remotes rather than opening up the same project and messing with eachother's git history, `renv` setups etc. This is exactly the situation that Git was designed for.
 
+## Colloborating on the same repo
 
+***TLDR: You can skip all this hassle if you remember to give the `yerkes-gencore/gencore` github team `Maintainer` access when you first initialize the repo.***
 
+If user #1 starts a repo and user #2 clones it and attempts to push changes, they may get an error. When running `usethis::gitsitrep()` user #2 may see something like this:
+```
+── GitHub project 
+• Type = 'theirs'
+• Host = 'https://github.com'
+• Config supports a pull request = FALSE
+• origin = 'yerkes-gencore/p23224_Matthew_Analysis' (can not push)
+• upstream = <not configured>
+• Desc = The only configured GitHub remote is 'origin', which
+  you cannot push to.
+  If your goal is to make a pull request, you must fork-and-clone.
+  `usethis::create_from_github()` can do this.
+```
+
+This means probably means that Person #1 hasn't given Person #2 write permission for the repo. Person #1 can do this on github by going to the repo, clicking `Settings`, then on the sidebar under `Access` click `Collaborators and teams`, then `Add people` and add Person #2's username and give them (at least) `Maintainer` access if it's someone in the core or `Write` access if it's some other collaborator you trust.

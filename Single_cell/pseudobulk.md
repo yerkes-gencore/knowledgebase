@@ -17,7 +17,34 @@ Besides the fact that `Seurat::FindMarkers` can't handle any contrast more compl
 
 See details on the performance advantages of pseudobulk over single-cell based DE methods below:
 
-## Single-cell differential expression methods are prone to false discoveries
+## Juntilla et al. 2022: Pseudobulk methods outperform Seurat and mixed models in terms of specificity and precision
+
+[Juntilla et al. 2022](https://doi.org/10.1093/bib/bbac286) used a combination of several different simulation schemes as well as a "mock analysis" using real data to estimate the proportion of false positives.
+
+They found that MAST and other single cell methods perform consistently worse than pseudobulk when it comes to specificity (proportion of subjects correctly given a negative assignment out of all subjects who are actually negative for the outcome) and precision (1 - FDR).
+
+Note that of all the benchmark studies linked on this page, this is the most useful and comprehensive because it tests all four major methods available:
+
+- Naive methods (i.e. Seurat's `FindMarkers()`, `latent.vars = NULL`)
+- Latent methods (i.e. Seurat's `FindMarkers()`, with `latent.vars` set to individuals)
+- Pseudobulks (limma, edgeR, DESeq2)
+- Mixed models (e.g. MAST with random effects)
+
+For more info on the methods tested, see [Table 1](https://academic.oup.com/view-large/373520295)
+
+Squair et al 2021 (section below) only test MAST via Seurat's implementation (Naive methods) and Pseudobulks, so isn't a fair comparison to the correct implentation of MAST's mixed model. Still, MAST's mixed model performs poorly in comparison to the pseudobulk methods.
+
+### Fig. 1: Results of the simulation based on a reference-free negative binomial generative model. 
+![Results of the simulation based on a reference-free negative binomial generative model.](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/bib/23/5/10.1093_bib_bbac286/1/bbac286f1.jpeg?Expires=1708622830&Signature=yFp7uMCRh2ta15R~~p2tl-Xw8EjOwSD12llkigm80jxwwr-0cMyL-bAt4JXq1JKdrw7CUsCNWPVoAm4fSpRimBJnGh3Vmzj4X0gwbGJCUg8QAi50LRYVBCy2A0OgDDwH4cHF8ph~MCYM8CLJGjsi-vLMBA~u-URC-7R2vYhdWYUBdDUmAlpuuMRlzHc1OU~uM8vUSdnhl~D7zNSzNWibAcwXjiQahnVsJ-IOqw6t6sEAtfUrBX1~F07Q5UfZUTHPmFYy~sNiIAq2TKQsr9n17jtTw-yEQO7m2dJR5Uhx3u6pwRqQdLd-HWRGYgfj1Dn~veSAv0Qe8ioaQChcule26g__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA)
+
+*Each boxplot shows values for 1280 simulated datasets with varying data properties.*
+
+### Fig. 4: Mock analysis using real data to estimate the proportion of false positives.
+![](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/bib/23/5/10.1093_bib_bbac286/1/bbac286f4.jpeg?Expires=1708623197&Signature=W8D-j~atSS0XVFjIV79dKeB-t2daRksg7EMa2WLc-shzRO3YQrBTWpa2cJXIRk8nVW~qi~afKZoVe1mZOiK9QlDekPiazaeDemG3Zjyk6VfQ7Mq-2kwDVSG2ehah7tHOZCcUmW56igqSfIOsigTmEgcYHXIItBzpcqgMfHRHL9fwzjBWFfnQtzwOr2EBttLggX0ctiGVsZh9Ma35gjytYYz~m67C4lTt-~xlk1oxz1nzH67xEoCMooZhg31DjFlKoU0kpy1ePRy1WRgU6d9gU9CosOYgM84PKYXrQv83axUHU5FvMchBIlryOkn3~xkcq~-qhqkZKLL7H6Izp~fuYg__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA)
+
+*The mock analysis was performed by segregating good-quality B cells from a COVID-19 dataset [26] that consists of 14 healthy control subjects and by randomly assigning one of the two mock groups for each subject. The assumption is that no genes with differential states should be found between the random mock groups. The random sampling was repeated 30 times. Seurat_poisson_latent was left out from the results due to its high failure rate (29/30) for the mock data. The dashed vertical line at 5% denotes the expected maximum proportion of false positives with an FDR threshold of 0.05.*
+
+## Squair et al. 2021: Seurat's implementation of single-cell differential expression methods are prone to false discoveries
 
 Single-cell DE methods (e.g. all `Seurat:FindMarkers` methods) and mixed models (such as `MAST` with random effect for indiviual) failed to control false discoveries in a systemic benchmark of differential expression in single-cell transcriptomics where the ground truth DE results ([Squair et al. 2021](https://www.nature.com/articles/s41467-021-25960-2)).
 
@@ -25,7 +52,7 @@ Single-cell DE methods are biased towards highly expressed genes. Squair et al. 
 ### Fig. 1: A systematic benchmark of differential expression in single-cell transcriptomics.
 ![Single-cell DE methods are biased towards highly expressed genes.](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-021-25960-2/MediaObjects/41467_2021_25960_Fig2_HTML.png?as=webp)
 
-Single-cell DE methods can even produce false discoveries in the absense of any biological difference. Squair at al. showed this using simulation studies with varying degrees of heterogenity between replicates, and with replicates randomly assigned to either a 'treatment' or 'control' group.
+Single-cell DE methods can even produce false discoveries in the absence of any biological difference. Squair at al. showed this using simulation studies with varying degrees of heterogenity between replicates, and with replicates randomly assigned to either a 'treatment' or 'control' group.
 ### Fig. 2: Single-cell DE methods are biased towards highly expressed genes.
 ![False discoveries in single-cell DE.](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41467-021-25960-2/MediaObjects/41467_2021_25960_Fig4_HTML.png?as=webp)
 
@@ -33,7 +60,7 @@ The advantage of pseudobulk methods (for simple experiments) comes largely from 
 ### Fig. 3: DE analysis of single-cell data must account for biological replicates.
 ![DE analysis of single-cell data must account for biological replicates.](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41467-021-25960-2/MediaObjects/41467_2021_25960_Fig3_HTML.png?as=webp)
 
-## Pseudobulk methods out-perform single-cell mixed modeling methods
+## Murphy & Skene 2022: Pseudobulk methods out-perform single-cell mixed modeling methods
 
 Some have proposed mixed models modelling single cell expression with replicate as a random effect ([Zimmerman et al. 2021](https://www.nature.com/articles/s41467-021-21038-1)). 
 
@@ -48,6 +75,7 @@ Interestingly, the performance of two-part hurdle models (used by `MAST`) decrea
 
 **TLDR** `Seurat::FindMarkers()` is called "FindMarkers" for a reason. If you want to detect differential expression across samples/treatments/conditions/genotypes, use pseudobulk.
 
+
 ## But I don't have enough samples to do pseudobulk!
 
 Then your analysis is 
@@ -58,7 +86,7 @@ Then your analysis is
 
 If you have fewer than 2 replicate per group, pseudobulk statistics is technically impossible and any inference you draw will be preliminary at best. Two replicates is technically possible with `limma`/`edgeR` but practically still only preliminary. Would you really trust a PCA with only two samples in a group? Just two tossed of a loaded die?
 
-Three is the absolute bare minimum but more replicates and fewer groups is advised if you want any hope of your DE analysis to be reproducible.
+Three is the absolute bare minimum but more replicates and fewer groups is advised if you want any hope of your DE analysis being reproducible.
 
 ***
 
@@ -123,10 +151,3 @@ Before pseudobulk DE, you need a dataset with multiple biological replicates per
 ### Wrangle, write and present results tables
 
 
-
-
-
-
-
-
-If we had to give a rule of thumb, it would be something like, "Shoot for at least 5-7 biological replicates per group because three-quarters of at least one of your groups will likely fail".
