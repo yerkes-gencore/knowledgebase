@@ -112,6 +112,8 @@ To add an exception for this directory, call:
 
 If so, just run that last line in the RStudio terminal, then Quit Session (and restart a new session) and it should be visible again. In general, if a git command isn't working in the RStudio terminal, it probably won't work in the GUI, that's a better place to troubleshoot than a separate terminal window.
 
+*Note:* The lack of a trailing slash is important in defining the directory. 
+
 ## How to access an existing analysis project or set up a new one
 
 For most single cell or bulk analyses, it's best to create a new repo from the `yerkes-gencore/scRNAseq_template` repo or `yerkes-gencore/Bulk_template` repo on github first. Then you can either open RStudio and start a new project from this remote repo (RStudio will clone the repo for you), or you can clone the repo first and then create an RStudio project in that repo afterwards. Both work fine. For detailed instructions on how to do this see https://happygitwithr.com/usage-intro.
