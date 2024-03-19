@@ -42,7 +42,7 @@ This repo should be living documentation that is updated with alternative method
 
 [Git and GitHub with RStudio (server)](Project_management_and_reproducibility/git_and_github_with_rstudio.md): Getting git credentials setup in RStudio server, troubleshooting common git/GitHub/RStudio problems, and creating new gencore analysis projects from templates.
 
-[Tempalte repos](Project_management_and_reproducibility/template_repos.md): Directory structure and scripts generalizable to an analysis. These serve as starting points for new analyses. 
+[Template repos](Project_management_and_reproducibility/template_repos.md): Directory structure and scripts generalizable to an analysis. These serve as starting points for new analyses. 
 
 [Gencore packages](Project_management_and_reproducibility/gencore_packages.md): Standardized code for common gencore analyses.
 
