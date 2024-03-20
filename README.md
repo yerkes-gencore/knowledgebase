@@ -54,6 +54,8 @@ This repo should be living documentation that is updated with alternative method
 
 [TCR Analysis](study_designs/TCR_Analysis.md): Identifying clonal expansion of T/B cells across treatments/timepoints.
 
+[RNA-seq model design](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7873980/): Designing linear models for your study.
+
 ## Biology
 
 [Orthologous gene symbols](Biology/orthologous_gene_symbols.md): Finding the corresponding gene symbol across species (e.g. mouse -\> human, human -\> macaca mulatta)
