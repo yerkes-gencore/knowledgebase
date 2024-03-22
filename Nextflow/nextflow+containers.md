@@ -8,6 +8,7 @@ podman run -i -v /yerkes-cifs/runs:/yerkes-cifs/runs -w "$PWD" --cpu-shares 1024
 ```
 Which results is the following error:
 ```
+Resource limits are not supported and ignored on cgroups V1 rootless systems
 Error: OCI runtime error: runc: runc create failed: unable to start container process: error during container init: error setting cgroup config for procHooks process: cannot set cpu limit: container could not join or create cgroup
 ```
 
