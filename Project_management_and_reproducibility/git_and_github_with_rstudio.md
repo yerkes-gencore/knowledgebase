@@ -21,6 +21,50 @@ Tell git who you are:
 usethis::use_git_config(user.name = "micahpf", user.email = "micahpfletcher@gmail.com")
 ```
 
+## Set up git credentials store
+
+First, install `pass`, a standard linux password manager, in the terminal.
+```
+sudo apt-get update
+sudo apt-get install pass
+```
+
+Then create a gpg key. GPG is a program that helps encrypt credentials and we'll use it as the backend for `pass`. Run this in the terminal and follow the prompts.
+```
+gpg --gen-key
+```
+
+After entering a username, email and passphrase as instructed, look for the following in the output:
+```
+gpg: key [random alphanumeric string] marked as ultimately trusted
+```
+
+Copy that `[random alphanumeric string]` and run this command:
+
+```
+pass init [random alphanumeric string]
+```
+
+Now your credential store should be initialized. So now tell git to use the credential store:
+```
+git config --global credential.credentialStore gpg
+```
+
+## Set up GitHub CLI client for authentication
+
+Install gh cli client
+```
+sudo apt-get install gh
+```
+
+Then login to github by running the following command and following the prompts. This may require two-factor authentication. When asked, I recommend using HTTPS rather than SSH as I don't think RStudio plays nicely with ssh. 
+```
+gh auth login
+```
+
+Now, try to run `git push` and see if you are prompted for credentials. If so, the credentials store should save them. If not and it runs successfully, they must have already been saved. Hopefully you won't be asked for credentials again in this RStudio Server container. If you are, revert back the github PAT approach described below.
+
+
 ## Set up github PAT
 
 ### Generate a token
