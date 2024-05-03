@@ -1,6 +1,8 @@
 # Using containers with Nexflow on our servers
 
-Nextflow is a tool for managing bioinformatics workflows. It is essential to many of our processes in the core. Using container runtimes (e.g. docker, podman) in conjunction with Nextflow dramatically improves the flexibility of our workflows and increase our productivity as a core.
+Nextflow is a tool for managing bioinformatics workflows. It is essential to many of our processes in the core. Using container runtimes (e.g. docker, podman, apptainer) in conjunction with Nextflow dramatically improves the flexibility of our workflows and increase our productivity as a core.
+
+## Podman
 
 When I try to run a nextflow pipeline that calls podman internally, nextflow runs this command:
 ```
@@ -22,4 +24,8 @@ However, cgroups v2 isn't installed with the any of our servers, the three older
 
 Unfortunately, simply upgrading to RHEL 9 isn't ideal either, because podman isn't officially supported by many community tools ([including nextflow](https://www.nextflow.io/docs/latest/container.html#podman)) and [docker doesn't support RHEL x86_64 as a platform](https://docs.docker.com/engine/install/).
 
-Docker and nextflow both fully support recent Ubuntu releases (which also come packaged with cgroups v2), so we prefer switching to Ubuntu as a solution.
+## Solution: Upgrade to RHEL 9 and use Apptainer instead of Podman
+
+RHEL 9 by default uses cgroups-v2, which solves the container resource limiting issue. Apptainer supports RHEL and resource limiting on rootless container with cgroups-v2.
+
+
