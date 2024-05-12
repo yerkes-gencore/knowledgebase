@@ -92,9 +92,9 @@ set to 50)
 ### scGate
 #### scGate using ADT Assay
 
-[Vignette](https://carmonalab.github.io/scGate.demo/scGate.CITE-seq.html)
+[Vignette: Isolating target cell types from CITE-seq data using scGate](https://carmonalab.github.io/scGate.demo/scGate.CITE-seq.html)
 
-[Vignette](https://carmonalab.github.io/scGate.demo/)
+[Vignette: scGate: marker-based purification of cell types from single-cell RNA-seq datasets](https://carmonalab.github.io/scGate.demo/)
 
 ### GencoreSC visualization tools
 
