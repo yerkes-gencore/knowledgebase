@@ -89,6 +89,13 @@ simplify things, but hasn't been super robustly tested. One known consideration
 is you need to use at least 50 dimensions for PCA (the default in the wrapper is 
 set to 50)
 
+### scGate
+#### scGate using ADT Assay
+
+[Vignette](https://carmonalab.github.io/scGate.demo/scGate.CITE-seq.html)
+
+[Vignette](https://carmonalab.github.io/scGate.demo/)
+
 ### GencoreSC visualization tools
 
 `extractTopRefMapResults()` will give you a table of the top cell-type predictions
