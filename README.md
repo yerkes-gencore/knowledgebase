@@ -63,3 +63,8 @@ This repo should be living documentation that is updated with alternative method
 [Immunology cell types](Biology/celltype-heirarchy.yaml): Nomenclature for immune cells and aliases. See the [image](Biology/celltype-heirarchy.pdf) for an overview.
 
 [Gencore gene expression database](Biology/Gencore_gene_expression_database.md): A collection of differentially expressed genes and celltype markers from Gencore projects.
+
+## AWS
+
+S3 Storage: Recover files from glacier
+
