@@ -36,4 +36,8 @@ If result contains something like:
 
 Then the object is available to work with.
 
+### working with restored files
+
+When the files are restored, you can usually manipulate them as normal with the cli, but
+sometimes the sync command doesn't work in treating them as a group and you need to copy (cp) them individually.
 
