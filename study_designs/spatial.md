@@ -19,3 +19,5 @@ You will need images of the tissues, sometimes called the fiducial, to associate
 I haven't advanced an analysis beyond the seurat vignette. 
 
 https://satijalab.org/seurat/articles/spatial_vignette.html
+
+You will likely want to perform some cell-type assignment, which will require some deconvolution to resolve single cell resolution. 
