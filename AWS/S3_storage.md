@@ -12,7 +12,7 @@ https://docs.aws.amazon.com/cli/latest/reference/s3api/restore-object.html
 
 Basic example:
 
-aws s3api restore-object --bucket <bucketID> --key <filepath> --restore-request Days=5
+aws s3api restore-object --bucket \<bucketID\> --key \<filepath\> --restore-request Days=5
 
 Haven't determined a way to do this for a "directory"; you have to to it for all files.
 
@@ -22,7 +22,7 @@ https://docs.aws.amazon.com/cli/latest/reference/s3api/head-object.html
 
 Basic example:
 
-aws s3api head-object --bucket <bucketID> --key <filepath>
+aws s3api head-object --bucket \<bucketID\> --key \<filepath\>
 
 If result contains something like:
 
