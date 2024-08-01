@@ -36,7 +36,7 @@ podman run \
   -e ROOT=TRUE \
   -p 8788:8787 \
   -v /yerkes-cifs:/yerkes-cifs \
-  yerkesgencore/gencore-singlecell-rstudio:4.3.1-0.0.2
+  yerkesgencore/gencore-singlecell-rstudio:4.3.1-0.0.4
 ```
 
 * `podman run` the base call to start a container
