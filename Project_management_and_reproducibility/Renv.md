@@ -34,6 +34,14 @@ RENV_PATHS_CACHE='/Volumes/yerkes/genomelab/illumina/runs/tools/renv/cache'
 
 Restart R to allow this to take effect. You can check if it worked by running `renv::paths$root()` and `renv::paths$cache()`.
 
+### Make sure R package manager repo is up-to-date
+
+Run the below command in the R console to set the package manager repo to the latest version.
+
+```
+options(repos = "https://packagemanager.rstudio.com/all/__linux__/focal/latest")
+```
+
 ### Initialize renv
 
 To set up renv in a project where it isn't in use yet. Run the following line and follow the prompts.
