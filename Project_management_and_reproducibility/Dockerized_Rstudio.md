@@ -80,14 +80,16 @@ this command on the server with your port
 
 Try to use the same port number on all servers, and try to use port numbers > 8788 (the default for Rstudio servers). If you anticipate your instance requiring lots of memory, please communicate that in the `#servers` channel to coordinate use.
 
-| Port | Sblab4 | Sblab5 | Sblab6 |
-|------|--------|--------|--------|
-| 8789 |  Greg  |  Greg  |  Greg  |
-| 8790 | Micah  |  Micah | Micah  |
-| 8791 | Derrik | Derrik | Derrik |
-| 8792 | Amit   | Amit   | Amit   |
-| 8795 | Amit   | Kivanc   | Amit   |
-| 8796 | Kivanc   | Kivanc   | Kivanc   |
+| Port | Sblab4 | Sblab5 | Sblab6 | Sblab02 |
+|------|--------|--------|--------| |
+| 8789 |  Greg  |  Greg  |  Greg  | |
+| 8790 | Micah  |  Micah | Micah  | |
+| 8791 | Derrik | Derrik | Derrik | |
+| 8792 | Amit   | Amit   | Amit   | |
+| 8794 | Chris  | Chris  | Chris  | |
+| 8795 | Amit   | Kivanc   | Amit   | |
+| 8796 | Kivanc   | Kivanc   | Kivanc   | |
+| 8787 |        |        |        | Naga | |
 
 # Mounts
 
