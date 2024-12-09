@@ -90,6 +90,7 @@ Try to use the same port number on all servers, and try to use port numbers > 87
 | 8795 | Amit   | Kivanc   | Amit   | |
 | 8796 | Kivanc   | Kivanc   | Kivanc   | |
 | 8787 |        |        |        | Naga | |
+| 8797 | Naga   | Naga   | Naga   | |
 
 # Mounts
 
