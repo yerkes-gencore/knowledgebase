@@ -15,6 +15,15 @@ sdk install java 17.0.6-tem
 
 Once Java is installed, you can install nextflow by following the documentation.
 
+## Java on core servers
+
+If you're running on the core servers and get a java error the following lines may solve the problem:
+
+```
+export PATH=/yerkes-cifs/runs/tools/java/jdk-19.0.2/bin:${PATH}
+export JAVA_HOME=/yerkes-cifs/runs/tools/java/jdk-19.0.2
+```
+
 # Running nextflow
 
 An invocation of a nextflow pipeline may look like the following:
