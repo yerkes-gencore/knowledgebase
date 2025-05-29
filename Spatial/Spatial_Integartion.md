@@ -1,3 +1,5 @@
+## Spatial Integration
+
 While identifying spatial domains or cell types within a single tissue slice is valuable, there is growing recognition of the need for integrative and comparative analyses across multiple ST slices. These slices may originate from different individuals, biological conditions, technologies, or developmental stages.
 
 However, combining data from multiple slices presents challenges due to batch effects—technical variations that can obscure true biological signals. Such effects may arise from:
