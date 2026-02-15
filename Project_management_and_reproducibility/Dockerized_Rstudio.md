@@ -120,6 +120,11 @@ To add an exception for this directory, call:
 
 If so, just run that last line in the terminal, then `Quit Session` and it should be visible again.
 
+# RStudioServer Project/Session/File cache
+
+RStudioServer seems to maintain a chache with recent Project/Files/Sessions in a folder in the user directory (ROOT for us):
+~/.local/share/rstudio
+
 # Resources for resolving system dependencies of R packages
 
 The `pak` library can help identify all dependencies needed for a package. E.g.:
