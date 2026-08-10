@@ -66,6 +66,7 @@ After logging in for the first time, run `conda init bash` and log out. You do n
 ## Useful commands
 These are commands I frequently use on the cluster. Read the User Guide or linux manuals for more detailed guides.
 
+### With Examples
 - `sinfo` to check available partitions
 <img width="774" height="149" alt="Screenshot 2026-08-10 at 2 41 18 PM" src="https://github.com/user-attachments/assets/475fdb54-efea-4d58-8f66-acd46032e8f9" />
 
@@ -81,7 +82,50 @@ These are commands I frequently use on the cluster. Read the User Guide or linux
 - `du -sh` to check storage
     - Note: I only have 2 projects in my /scratch directory during this screenshot, and I am almost halfway to my quota! Monitor usage carefully.
 <img width="774" height="109" alt="Screenshot 2026-08-10 at 2 46 22 PM" src="https://github.com/user-attachments/assets/56578965-4820-4c5d-b9b0-5f74b05916d1" />
- 
+
+- `scp` to transfer files
+    - You must run this from your local computer, not from the HPC terminal or our servers.
+```
+# from local to HPC
+scp file.txt /users/rdockma/destination                                               # one file
+scp file1.txt file2.txt rdockma@ondemand-dev.it.emory.edu:/users/rdockma/destination  # multiple files
+scp -r sampleDir rdockma@ondemand-dev.it.emory.edu:/users/rdockma/destination         # directory
+
+# from HPC to local (or mounted volume)
+scp rdockma@ondemand-dev.it.emory.edu:/users/rdockma/file.txt /Volumes/genomelab/illumina/runs/analyst/rachel
+```
+<img width="1522" height="416" alt="Screenshot 2026-08-10 at 3 03 12 PM" src="https://github.com/user-attachments/assets/f3cd096e-006d-41a4-9570-d9e9502b6b08" />
+
+### Just The Code, Please
+```
+# local terminal
+## add known_host and access cluster
+echo "@cert-authority ondemand-dev.it.emory.edu $(cat Downloads/ssh_ca.pub)" >> ~/.ssh/known_hosts
+ssh YOUR_NETID@ondemand-dev.it.emory.edu
+
+# HPC terminal
+## initatiate conda
+conda init bash
+exit
+
+# local terminal
+## transfer sample data to HPC and log back in
+scp -r sampleDir YOUR_NETID@ondemand-dev.it.emory.edu:/scratch/YOUR_NETID
+ssh YOUR_NETID@ondemand-dev.it.emory.edu
+
+# HPC terminal
+du -sh .            ## check storage
+sinfo               ## check available partitions
+nano runStar.sh     ## make job script
+sbatch runStar.sh   ## submit job
+squeue --me         ## check job
+scancel {JOBID}     ## cancel job
+exit                ## exit HPC
+
+# local terminal
+## transfer data to local
+scp YOUR_NETID@ondemand-dev.it.emory.edu:/scratch/YOUR_NETID/starOutput.tar.gz /Volumes/genomelab/illumina/runs/analyst/etc
+```
 
 # Troubleshooting
 
