@@ -75,10 +75,13 @@ These are commands I frequently use on the cluster. Read the User Guide or linux
 - `squeue --me` to check job status
 <img width="774" height="54" alt="Screenshot 2026-08-10 at 2 39 08 PM" src="https://github.com/user-attachments/assets/4893a8a0-01a7-4301-aacd-7973bc899ca7" />
 
-
 - `scancel {JOBID}` to cancel job
 <img width="774" height="74" alt="Screenshot 2026-08-10 at 2 40 08 PM" src="https://github.com/user-attachments/assets/f9d8fff8-f2ac-4f11-94df-2fecad748c6b" />
 
+- `du -sh` to check storage
+    - Note: I only have 2 projects in my /scratch directory during this screenshot, and I am almost halfway to my quota! Monitor usage carefully.
+<img width="774" height="109" alt="Screenshot 2026-08-10 at 2 46 22 PM" src="https://github.com/user-attachments/assets/56578965-4820-4c5d-b9b0-5f74b05916d1" />
+ 
 
 # Troubleshooting
 
