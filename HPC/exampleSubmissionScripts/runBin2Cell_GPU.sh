@@ -8,7 +8,8 @@
 #SBATCH --gpus=1
 #SBATCH --time=03:00:00
 
-### Note: this script uses a conda environment and a custom python script to run Bin2Cell, with the header pointing to a GPU partition
+# Note: this script uses a conda environment and a custom python script to run Bin2Cell
+## the header points to a GPU partition with the associated parameters
 
 source activate /group/sbosing-g00/env/Bin2Cell
 
