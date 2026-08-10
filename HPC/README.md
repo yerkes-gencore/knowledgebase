@@ -1,9 +1,26 @@
 # Emory High Performance Computing Cluster
 <img width="960" height="455" alt="image" src="https://github.com/user-attachments/assets/1b7d63d6-e642-4a39-ab82-9e94ae8179e0" />
-Emory University expanded its scientific computing infrastructure and services with its Hybrid High-Performance Computing Platform for Education and Research (HyPER). The [HyPER C3](https://emory.sharepoint.com/sites/HyPER) "provides... centrally-managed, user-friendly, and subsidized access to shared high-performance computing resources" hosted on AWS infrastructure.
+Emory University expanded its scientific computing infrastructure and services with its Hybrid High-Performance Computing Platform for Education and Research (HyPER). The [HyPER C3](https://emory.sharepoint.com/sites/HyPER) cluster "provides... centrally-managed, user-friendly, and subsidized access to shared high-performance computing resources" hosted on AWS infrastructure.
 
 ## Overview of cluster organization
-There are three storage areas on the HPC with different storage and access capacities.
+The cluster consists of **login nodes** and **compute nodes** which share the same storage directories. 
+
+- You access the HPC via SSH on to the **login nodes**. You do NOT run analyses on this node; you may download files, edit and submit SLURM submission scripts, and organize directories at this location.
+
+- Actual computational work occurs on the **compute nodes**, which are divided into *partitions* with specific memory, thread, and processing unit characteristics.
+
+Below are tables outlining partition and storage characteristics (up-to-date as of August 2026).
+
+### Partitions
+<img width="1413" height="487" alt="Screenshot 2026-08-10 at 2 14 08 PM" src="https://github.com/user-attachments/assets/6e90bdb7-08b0-4732-9e0c-0a45f62cc22b" />
+
+- **CPU partitions**: c64-m512, c128-m1024
+
+- **GPU partitions**: rp6b-1-gm96-c8-m64, l4-4-gm96-c48-m192, rp6b-8-gm768-c192-m2048, b200-8-gm1432-c192-m2048
+
+- **Jupyter notebook partitions**: jptr-l4-1-gm24-c4-m16 (GPU), jptr-c4-m32 (CPU)
+
+### Storage
 
 |Storage Area|Path|Purpose|Quota|Purge Policy|Increase Policy|Backup|
 | :--- | :--- |:--- |  :--- | :--- | :--- | :--- |
