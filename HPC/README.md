@@ -24,7 +24,7 @@ Below are tables outlining partition and storage characteristics (up-to-date as 
 
 |Storage Area|Path|Purpose|Quota|Purge Policy|Increase Policy|Backup|
 | :--- | :--- |:--- |  :--- | :--- | :--- | :--- |
-|User Home|/user/YOUR_NETID|Storage for small reused objects, eg submission scripts|50Gb|No job submission for 90 days|None|Daily backup|
+|User Home|/users/YOUR_NETID|Storage for small reused objects, eg submission scripts|50Gb|No job submission for 90 days|None|Daily backup|
 |User Scratch|/scratch/YOUR_NETID|High performance personal workspace for analysis|1Tb|No job submission for 90 days|Temporary increase to 1.5Tb on request|None|
 |Group Share|/group/sbosing-g00|Shared storage among group members, eg software, genome references, environments|1Tb|None|$0.15 per additional GB-mo|None|
 
