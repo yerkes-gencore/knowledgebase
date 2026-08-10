@@ -63,10 +63,26 @@ Enter your Emory password when prompted.
 ### 4. Configure conda environment management
 After logging in for the first time, run `conda init bash` and log out. You do not need to do this again for future logins. 
 
+## Useful commands
+These are commands I frequently use on the cluster. Read the User Guide or linux manuals for more detailed guides.
 
-## Troubleshooting
+- `sinfo` to check available partitions
+<img width="774" height="149" alt="Screenshot 2026-08-10 at 2 41 18 PM" src="https://github.com/user-attachments/assets/475fdb54-efea-4d58-8f66-acd46032e8f9" />
 
-### 1. WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+- `sbatch` to submit a job
+<img width="774" height="74" alt="Screenshot 2026-08-10 at 2 39 43 PM" src="https://github.com/user-attachments/assets/ff19529b-5d2c-4201-b64b-e737b17e8f60" />
+
+- `squeue --me` to check job status
+<img width="774" height="54" alt="Screenshot 2026-08-10 at 2 39 08 PM" src="https://github.com/user-attachments/assets/4893a8a0-01a7-4301-aacd-7973bc899ca7" />
+
+
+- `scancel {JOBID}` to cancel job
+<img width="774" height="74" alt="Screenshot 2026-08-10 at 2 40 08 PM" src="https://github.com/user-attachments/assets/f9d8fff8-f2ac-4f11-94df-2fecad748c6b" />
+
+
+# Troubleshooting
+
+## 1. WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
 
 Periodically, you may come across this message:
 
