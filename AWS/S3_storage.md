@@ -40,4 +40,7 @@ Then the object is available to work with.
 
 When the files are restored, you can usually manipulate them as normal with the cli, but
 sometimes the sync command doesn't work in treating them as a group and you need to copy (cp) them individually.
+# Example:
+# note, to sync, make sure to include exact directory you want to download into
+aws s3 sync --force-glacier-transfer s3://yerkers-gencore-runs-flexible/runs/scrna_seq_ref/ /yerkes-cifs/runs/scrna_seq_ref/
 
