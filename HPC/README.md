@@ -85,6 +85,7 @@ These are commands I frequently use on the cluster. Read the User Guide or linux
 
 - `scp` to transfer files
     - You must run this from your local computer, not from the HPC terminal or our servers.
+    - I found these transfers to max out at ~45Mb/s, so upload files ahead of time!
 ```
 # from local to HPC
 scp file.txt /users/rdockma/destination                                               # one file
