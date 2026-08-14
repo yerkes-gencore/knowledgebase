@@ -63,3 +63,7 @@ freebayes-parallel <(fasta_generate_regions.py cellranger_Mmul10_100.fasta.fai 1
 
 # post-freebayes timestamp
 date 
+
+# filtering .vcf to only keep snps with representation from every sample
+bcftools view -v snps -U -m 2 -M 2 -i 'MAF>=0.05 && F_MISSING==0' p25097_Vincent_3Aug26_24c.vcf \
+-O v -o p25097_Vincent_3Aug26_24c_T2T_filtered_snps.vcf
