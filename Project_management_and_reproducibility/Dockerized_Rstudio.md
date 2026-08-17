@@ -96,6 +96,7 @@ Try to use the same port number on all servers, and try to use port numbers > 87
 | 8800 | Sydney | Sydney | Sydney |
 | 8801 | Rachel | Rachel | Rachel |
 | 8802 |  Greg  |  Greg  |  Greg  | |
+| 8802 | Bill | Bill|Bill |
 
 # Mounts
 
